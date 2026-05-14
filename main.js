@@ -187,20 +187,36 @@ document.addEventListener('DOMContentLoaded', () => {
         commentary: document.getElementById('commentary-app'),
     };
 
+    let disqusLoaded = false;
+
+    function loadDisqus() {
+        if (disqusLoaded) return;
+        disqusLoaded = true;
+        window.disqus_shortname = 'testv2';
+        window.disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = 'vibe-2026-main';
+        };
+        const s = document.createElement('script');
+        s.src = 'https://testv2.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        document.body.appendChild(s);
+    }
+
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
             const app = button.dataset.app;
 
-            // Update button active states
             navButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // Show/hide app sections
             for (const key in appSections) {
                 if (appSections[key]) {
                     appSections[key].style.display = key === app ? 'block' : 'none';
                 }
             }
+
+            if (app === 'commentary') loadDisqus();
         });
     });
 });
