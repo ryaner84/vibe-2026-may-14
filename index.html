@@ -1,26 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toto Number Generator</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe 2026 - Lifestyle & Travel</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-    <!-- Sun icon -->
-    <svg id="sun-icon" viewBox="0 0 24 24" style="display: none;">
-      <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"></path>
-    </svg>
-    <!-- Moon icon -->
-    <svg id="moon-icon" viewBox="0 0 24 24">
-      <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"></path>
-    </svg>
-  </button>
+    <nav class="app-nav">
+        <div class="nav-container">
+            <div class="nav-logo">VIBE<span>2026</span></div>
+            <div class="nav-links">
+                <button class="nav-btn active" data-app="toto">Lucky Toto</button>
+                <button class="nav-btn" data-app="travel">Travelling Essential</button>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg id="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+        </div>
+    </nav>
 
-  <h1>Toto Number Generator</h1>
-  <toto-generator></toto-generator>
+    <main id="app-content">
+        <!-- Toto App -->
+        <section id="toto-app" class="app-section">
+            <div class="hero">
+                <h1>Unlock Your Luck</h1>
+                <p>Advanced statistical number generation for the modern player.</p>
+            </div>
+            <div class="generator-container">
+                <toto-generator></toto-generator>
+            </div>
+        </section>
 
-  <script defer type="module" src="/main.js"></script>
+        <!-- Travel App -->
+        <section id="travel-app" class="app-section" style="display: none;">
+            <div class="hero">
+                <h1>Travelling Essential</h1>
+                <p>Your intelligent companion for global exploration.</p>
+            </div>
+            
+            <div class="travel-container">
+                <div id="map-selection" class="card">
+                    <div class="card-header">
+                        <h2 id="selection-title">Select Departure City</h2>
+                        <p id="selection-subtitle">Click a marker on the map to begin</p>
+                    </div>
+                    <div id="map"></div>
+                    <div class="selection-controls">
+                        <div class="route-display side-by-side">
+                            <div class="selection-box from">
+                                <span class="label">DEPARTURE</span>
+                                <div id="from-display" class="city-name">---</div>
+                            </div>
+                            <div class="route-connector">
+                                <span class="route-arrow">✈️</span>
+                            </div>
+                            <div class="selection-box to">
+                                <span class="label">DESTINATION</span>
+                                <div id="to-display" class="city-name">---</div>
+                            </div>
+                        </div>
+                        <div class="reset-container">
+                            <button id="reset-map" class="btn-secondary">Clear All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="additional-info" class="card" style="display: none;">
+                    <div class="card-header">
+                        <h2>Traveler Details</h2>
+                        <p>Tell us more to customize your report</p>
+                    </div>
+                    <form id="travel-form">
+                        <div class="form-group">
+                            <label for="citizenship">Citizenship</label>
+                            <select id="citizenship" required>
+                                <option value="" disabled selected>Select citizenship</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="China">China</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="telco">Telco Provider</label>
+                            <select id="telco" required>
+                                <option value="" disabled selected>Select provider</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="category-group">
+                            <label for="category">Plan Type</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>Select Provider First</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="tier-group">
+                            <label for="tier">Plan Tier</label>
+                            <select id="tier" required>
+                                <option value="" disabled selected>Select Plan Type First</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="plan">Specific Plan</label>
+                            <select id="plan" required>
+                                <option value="" disabled selected>Select Tier First</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">Generate Report</button>
+                        <button type="button" id="back-to-map" class="btn-text">Back to Map</button>
+                    </form>
+                </div>
+
+                <div id="travel-report" class="card" style="display: none;">
+                    <!-- Report content injected via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="main.js"></script>
+    <script src="travel.js"></script>
 </body>
 </html>
