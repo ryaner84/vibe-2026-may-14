@@ -178,34 +178,51 @@ class TotoGenerator extends HTMLElement {
 
 customElements.define('toto-generator', TotoGenerator);
 
-// Theme Toggle Logic
+// --- App Navigation ---
+document.addEventListener('DOMContentLoaded', () => {
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const appSections = {
+        toto: document.getElementById('toto-app'),
+        travel: document.getElementById('travel-app'),
+    };
+
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const app = button.dataset.app;
+
+            // Update button active states
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Show/hide app sections
+            for (const key in appSections) {
+                if (appSections[key]) {
+                    appSections[key].style.display = key === app ? 'block' : 'none';
+                }
+            }
+        });
+    });
+});
+
+
+// --- Theme Toggle Logic ---
 const themeToggle = document.getElementById('theme-toggle');
 const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 
 function setTheme(isDark) {
-  if (isDark) {
-    document.body.classList.add('dark-theme');
-    sunIcon.style.display = 'block';
-    moonIcon.style.display = 'none';
-  } else {
-    document.body.classList.remove('dark-theme');
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-  }
+  document.body.classList.toggle('dark-theme', isDark);
+  sunIcon.style.display = isDark ? 'block' : 'none';
+  moonIcon.style.display = isDark ? 'none' : 'block';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
 const savedTheme = localStorage.getItem('theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-  setTheme(true);
-} else {
-  setTheme(false);
-}
+setTheme(savedTheme === 'dark' || (!savedTheme && prefersDark));
 
 themeToggle.addEventListener('click', () => {
-  const isDark = document.body.classList.contains('dark-theme');
-  setTheme(!isDark);
+  const isDark = !document.body.classList.contains('dark-theme');
+  setTheme(isDark);
 });
