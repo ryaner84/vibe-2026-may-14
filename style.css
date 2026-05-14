@@ -483,22 +483,19 @@ select {
   background: #1a1a1a;
 }
 
-/* Comments Section */
-#comments-section {
-  padding: 2rem 1.5rem 4rem;
-  border-top: 1px solid var(--border-color);
+/* Commentary Section */
+.commentary-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem 4rem;
 }
 
-.comments-container {
+.commentary-container .card {
   max-width: 800px;
-  margin: 0 auto;
 }
 
-.comments-title {
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  opacity: 0.8;
+.commentary-thread {
+  padding: 1.5rem 2rem 2rem;
 }
 
 @media (max-width: 768px) {

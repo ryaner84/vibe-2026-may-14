@@ -184,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const appSections = {
         toto: document.getElementById('toto-app'),
         travel: document.getElementById('travel-app'),
+        commentary: document.getElementById('commentary-app'),
     };
 
     navButtons.forEach(button => {

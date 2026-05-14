@@ -15,6 +15,7 @@
             <div class="nav-links">
                 <button class="nav-btn active" data-app="toto">Lucky Toto</button>
                 <button class="nav-btn" data-app="travel">Travelling Essential</button>
+                <button class="nav-btn" data-app="commentary">Commentary</button>
             </div>
             <button id="theme-toggle" aria-label="Toggle dark mode">
                 <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -120,38 +121,50 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <section id="comments-section">
-        <div class="comments-container">
-            <div class="comments-header" style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.5rem;">
-                <h2 class="comments-title" style="margin-bottom: 0;">Comments</h2>
-                <a href="#disqus_thread" class="disqus-comment-count" data-disqus-identifier="vibe-2026-main" style="font-size: 0.9rem; font-weight: 600; text-decoration: none;"></a>
+        <!-- Commentary App -->
+        <section id="commentary-app" class="app-section" style="display: none;">
+            <div class="hero">
+                <h1>Commentary</h1>
+                <p>Share your thoughts, tips, and experiences with the community.</p>
             </div>
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_shortname = 'testv2';
-                var disqus_config = function () {
-                    this.page.url = window.location.href;
-                    this.page.identifier = 'vibe-2026-main';
-                };
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://testv2.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-    </section>
+            <div class="commentary-container">
+                <div class="card">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: baseline; gap: 0.75rem;">
+                            <h2 style="margin-bottom: 0;">Discussion</h2>
+                            <a href="#disqus_thread" class="disqus-comment-count" data-disqus-identifier="vibe-2026-main" style="font-size: 0.9rem; font-weight: 600; text-decoration: none;"></a>
+                        </div>
+                        <p>What's on your mind?</p>
+                    </div>
+                    <div class="commentary-thread">
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="main.js"></script>
     <script src="travel.js"></script>
 
-    <!-- Disqus Comment Count Script -->
+    <!-- Disqus: initialise embed on page load -->
+    <script>
+        var disqus_shortname = 'testv2';
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = 'vibe-2026-main';
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://testv2.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
     <script id="dsq-count-scr" src="//testv2.disqus.com/count.js" async></script>
 </body>
 </html>
