@@ -1,1 +1,86 @@
-/* Add styles here */
+:root {
+  /* Light Mode (Default) */
+  --bg-color: oklch(98% 0.01 250);
+  --text-color: oklch(20% 0.02 250);
+  --card-bg: oklch(100% 0 0);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --number-bg: oklch(94% 0.02 250);
+  --number-text: oklch(20% 0.02 250);
+  --primary-color: oklch(65% 0.2 250);
+  --primary-hover: oklch(55% 0.2 250);
+  --primary-text: oklch(100% 0 0);
+  --border-color: oklch(90% 0.02 250);
+  --accent-color: oklch(70% 0.2 320);
+
+  --transition-speed: 0.3s;
+}
+
+body.dark-theme {
+  /* Dark Mode */
+  --bg-color: oklch(12% 0.02 250);
+  --text-color: oklch(98% 0.01 250);
+  --card-bg: oklch(18% 0.03 250);
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --number-bg: oklch(25% 0.04 250);
+  --number-text: oklch(95% 0.02 250);
+  --primary-color: oklch(75% 0.15 250);
+  --primary-hover: oklch(85% 0.15 250);
+  --primary-text: oklch(10% 0.02 250);
+  --border-color: oklch(30% 0.04 250);
+  --accent-color: oklch(80% 0.15 320);
+}
+
+* {
+  box-sizing: border-box;
+  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--card-shadow);
+  z-index: 1000;
+  width: 45px;
+  height: 45px;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
