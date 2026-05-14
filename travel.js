@@ -1,3 +1,4 @@
+
 const REGIONS = [
     { name: 'Singapore', country: 'Singapore', lat: 1.3521, lng: 103.8198 },
     { name: 'United Kingdom', country: 'UK', lat: 55.3781, lng: -3.4360 },
@@ -12,7 +13,7 @@ const REGIONS = [
 ];
 
 const SIMBA_APAC_COUNTRIES = ['Japan', 'Malaysia', 'Thailand', 'Australia', 'China', 'Taiwan', 'Hong Kong', 'Indonesia', 'Philippines', 'Vietnam', 'India', 'South Korea'];
-const SIMBA_GLOBAL_COUNTRIES = ['UK', 'USA', 'France', 'UAE', 'Germany', 'Italy', 'Spain', 'Canada'];
+const SIMBA_GLOBAL_COUNTRIES = ['United Kingdom', 'United States', 'France', 'UAE', 'Germany', 'Italy', 'Spain', 'Canada'];
 
 const TELCO_DATA = {
     'Singapore': {
@@ -49,10 +50,36 @@ const TELCO_DATA = {
                     '3GB – 156 Countries ($35)': ['ReadyRoam 3GB (156 Countries)']
                 }
             },
+            'standardRate': { cost: '~$25/MB pay-per-use (no roaming plan)', source: 'Singtel official', date: 'May 2026' },
             'roaming': {
                 'ReadyRoam 1GB (18 Countries)': {
-                    'Japan': { zone: 'Zone 1 (A)', cost: 'Included in Bundle ($15)', source: 'Singtel official', date: 'May 2026' },
-                    'Malaysia': { zone: 'Zone 1 (A)', cost: 'Included in Bundle ($5)', source: 'Singtel official', date: 'May 2026' }
+                    'Japan':     { zone: 'APAC Zone', cost: '$15 / 1GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Malaysia':  { zone: 'APAC Zone', cost: '$15 / 1GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Thailand':  { zone: 'APAC Zone', cost: '$15 / 1GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Australia': { zone: 'APAC Zone', cost: '$15 / 1GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'China':     { zone: 'APAC Zone', cost: '$15 / 1GB (30 days)', source: 'Singtel official', date: 'May 2026' }
+                },
+                'ReadyRoam 2GB (81 Countries)': {
+                    'Japan':          { zone: 'Zone 1', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Malaysia':       { zone: 'Zone 1', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Thailand':       { zone: 'Zone 1', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Australia':      { zone: 'Zone 1', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'China':          { zone: 'Zone 1', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Zone 2', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'United States':  { zone: 'Zone 2', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'France':         { zone: 'Zone 2', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'UAE':            { zone: 'Zone 3', cost: '$25 / 2GB (30 days)', source: 'Singtel official', date: 'May 2026' }
+                },
+                'ReadyRoam 3GB (156 Countries)': {
+                    'Japan':          { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Malaysia':       { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Thailand':       { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'Australia':      { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'China':          { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'United Kingdom': { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'United States':  { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'France':         { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' },
+                    'UAE':            { cost: '$35 / 3GB (30 days)', source: 'Singtel official', date: 'May 2026' }
                 },
                 'S Plan': {
                     'Japan': { zone: 'Zone 1', cost: '$15 / 1GB (30 days)', source: 'Singtel official', date: 'May 2026' }
@@ -69,6 +96,53 @@ const TELCO_DATA = {
                     '$15 Value SIM': ['$15 Prepaid SIM'],
                     '$35 Tourist SIM': ['$35 Prepaid SIM']
                 }
+            },
+            'standardRate': { cost: '$21/MB pay-per-use (max $30/day)', source: 'Starhub official', date: 'May 2026' },
+            'roaming': {
+                'Starhub 4G Plan': {
+                    'Japan':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Malaysia':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Thailand':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Australia':      { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'China':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United States':  { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'France':         { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'UAE':            { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' }
+                },
+                'Starhub 5G Plan': {
+                    'Japan':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Malaysia':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Thailand':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Australia':      { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'China':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day) or $16/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United States':  { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'France':         { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'UAE':            { zone: 'Global', cost: 'DataTravel Global: $40/8GB or $50/12GB (30-day)', source: 'Starhub official', date: 'May 2026' }
+                },
+                '$15 Prepaid SIM': {
+                    'Japan':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Malaysia':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Thailand':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Australia':      { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'China':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United States':  { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'France':         { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'UAE':            { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' }
+                },
+                '$35 Prepaid SIM': {
+                    'Japan':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Malaysia':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Thailand':       { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'Australia':      { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'China':          { zone: 'Asia Pacific', cost: 'DataTravel AP: $6/1GB (3-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'United States':  { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'France':         { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' },
+                    'UAE':            { zone: 'Global', cost: 'DataTravel Global: $40/8GB (30-day)', source: 'Starhub official', date: 'May 2026' }
+                }
             }
         }
     },
@@ -81,6 +155,42 @@ const TELCO_DATA = {
                 },
                 'Prepaid': {
                     'Standard Hotlink': ['Hotlink Prepaid']
+                }
+            },
+            'standardRate': { cost: 'RM29/day auto DataRoam Pass', source: 'Maxis official', date: 'May 2026' },
+            'roaming': {
+                'Maxis Postpaid 98': {
+                    'Singapore':      { zone: 'ASEAN', cost: 'RM29/day or RM39 / 3-day ASEAN Pass', source: 'Maxis official', date: 'May 2026' },
+                    'Thailand':       { zone: 'ASEAN', cost: 'RM29/day or RM39 / 3-day ASEAN Pass', source: 'Maxis official', date: 'May 2026' },
+                    'Japan':          { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis official', date: 'May 2026' },
+                    'Australia':      { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis official', date: 'May 2026' },
+                    'China':          { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' },
+                    'United States':  { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' },
+                    'France':         { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' },
+                    'UAE':            { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' }
+                },
+                'Maxis Postpaid 128': {
+                    'Singapore':      { zone: 'ASEAN', cost: 'RM29/day or RM39 / 3-day ASEAN Pass', source: 'Maxis official', date: 'May 2026' },
+                    'Thailand':       { zone: 'ASEAN', cost: 'RM29/day or RM39 / 3-day ASEAN Pass', source: 'Maxis official', date: 'May 2026' },
+                    'Japan':          { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis official', date: 'May 2026' },
+                    'Australia':      { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis official', date: 'May 2026' },
+                    'China':          { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' },
+                    'United States':  { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' },
+                    'France':         { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' },
+                    'UAE':            { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis official', date: 'May 2026' }
+                },
+                'Hotlink Prepaid': {
+                    'Singapore':      { zone: 'ASEAN', cost: 'RM29/day or RM39 / 3-day ASEAN Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'Thailand':       { zone: 'ASEAN', cost: 'RM29/day or RM39 / 3-day ASEAN Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'Japan':          { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'Australia':      { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'China':          { zone: 'APAC',  cost: 'RM38/day or RM69 / 7-day APAC Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'United Kingdom': { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'United States':  { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'France':         { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis/Hotlink official', date: 'May 2026' },
+                    'UAE':            { zone: 'Global', cost: 'RM38/day or RM99 / 15-day Pass', source: 'Maxis/Hotlink official', date: 'May 2026' }
                 }
             }
         }
@@ -320,53 +430,53 @@ class TravelApp {
     }
 
     generateReport() {
-        const citizenship = document.getElementById('citizenship').value;
-        const provider = document.getElementById('telco').value;
-        const plan = document.getElementById('plan').value;
+    const citizenship = document.getElementById('citizenship').value;
+    const provider = document.getElementById('telco').value;
+    const plan = document.getElementById('plan').value;
 
-        const visa = (VISA_RULES[citizenship] && VISA_RULES[citizenship][this.toRegion.country]) 
-            ? VISA_RULES[citizenship][this.toRegion.country] 
-            : { status: "Check Embassy", source: "External", date: "N/A" };
+    const visa = (VISA_RULES[citizenship] && VISA_RULES[citizenship][this.toRegion.country]) 
+        ? VISA_RULES[citizenship][this.toRegion.country] 
+        : { status: "Check Embassy", source: "External", date: "N/A" };
 
-        let roaming = { cost: "Standard Rates Apply", source: "Telco Portal", date: "May 2026" };
-        let zoneInfo = "";
-        
-        // Advanced Telco Logic
-        if (provider === 'SIMBA') {
-            const isAPAC = SIMBA_APAC_COUNTRIES.includes(this.toRegion.name);
-            const isGlobal = SIMBA_GLOBAL_COUNTRIES.includes(this.toRegion.name);
-            if (plan === 'SIMBA $12 130GB Plan') {
-                if (isAPAC) {
-                    roaming = { cost: 'FREE (18GB APAC Roam)', source: 'SIMBA Official', date: 'May 2026' };
-                    zoneInfo = 'APAC Zone';
-                } else if (isGlobal) {
-                    roaming = { cost: 'FREE (8GB Global Roam)', source: 'SIMBA Official', date: 'May 2026' };
-                    zoneInfo = 'Global Zone';
-                }
-            } else if (plan === 'SIMBA $15 200GB Plan') {
-                if (isAPAC) {
-                    roaming = { cost: 'FREE (25GB APAC Roam)', source: 'SIMBA Official', date: 'May 2026' };
-                    zoneInfo = 'APAC Zone';
-                } else if (isGlobal) {
-                    roaming = { cost: 'FREE (10GB Global Roam)', source: 'SIMBA Official', date: 'May 2026' };
-                    zoneInfo = 'Global Zone';
-                }
-            } else if (isAPAC || isGlobal) {
-                roaming = { cost: 'FREE (8GB Roam)', source: 'SIMBA Official', date: 'May 2026' };
-                zoneInfo = isAPAC ? 'APAC Zone' : 'Global Zone';
-            }
-        } else if (TELCO_DATA[this.fromRegion.country] && TELCO_DATA[this.fromRegion.country][provider] && TELCO_DATA[this.fromRegion.country][provider].roaming) {
-            const roamData = TELCO_DATA[this.fromRegion.country][provider].roaming[plan];
-            if (roamData && roamData[this.toRegion.name]) {
-                roaming = roamData[this.toRegion.name];
-                zoneInfo = roaming.zone ? `${this.toRegion.name} - ${roaming.zone}` : "";
+    let roaming = { cost: "Standard Rates Apply", source: "Telco Portal", date: "May 2026" };
+    let zoneInfo = "";
+
+    // --- Start of Corrected Roaming Logic ---
+    const isAPAC = SIMBA_APAC_COUNTRIES.includes(this.toRegion.name);
+    const isGlobal = SIMBA_GLOBAL_COUNTRIES.includes(this.toRegion.name);
+
+    if (provider === 'SIMBA') {
+        if (plan === 'SIMBA $12 130GB Plan') {
+            if (isAPAC) roaming = { cost: 'FREE (18GB APAC Roam)', source: 'SIMBA Official', date: 'May 2026' };
+            else if (isGlobal) roaming = { cost: 'FREE (8GB Global Roam)', source: 'SIMBA Official', date: 'May 2026' };
+        } else if (plan === 'SIMBA $15 200GB Plan') {
+            if (isAPAC) roaming = { cost: 'FREE (25GB APAC Roam)', source: 'SIMBA Official', date: 'May 2026' };
+            else if (isGlobal) roaming = { cost: 'FREE (10GB Global Roam)', source: 'SIMBA Official', date: 'May 2026' };
+        } else if (isAPAC || isGlobal) {
+            // Default SIMBA plan roaming
+            roaming = { cost: 'FREE (8GB Roam)', source: 'SIMBA Official', date: 'May 2026' };
+        }
+        zoneInfo = isAPAC ? 'APAC Zone' : (isGlobal ? 'Global Zone' : '');
+    
+    } else {
+        const providerData = TELCO_DATA[this.fromRegion.country]?.[provider];
+        if (providerData) {
+            const roamDataForPlan = providerData.roaming?.[plan];
+            if (roamDataForPlan && roamDataForPlan[this.toRegion.name]) {
+                const destinationRoam = roamDataForPlan[this.toRegion.name];
+                roaming = { ...destinationRoam };
+                zoneInfo = destinationRoam.zone ? `${this.toRegion.name} – ${destinationRoam.zone}` : '';
+            } else if (providerData.standardRate) {
+                roaming = { ...providerData.standardRate };
             }
         }
+    }
+    // --- End of Corrected Roaming Logic ---
 
-        const adapter = ADAPTER_DATA[this.toRegion.country] || { types: ['Standard'], source: 'General', date: '2026' };
-        const driving = DRIVING_DATA[this.toRegion.country];
+    const adapter = ADAPTER_DATA[this.toRegion.country] || { types: ['Standard'], source: 'General', date: '2026' };
+    const driving = DRIVING_DATA[this.toRegion.country];
 
-        const adapterHtml = adapter.types.map(t => {
+    const adapterHtml = adapter.types.map(t => {
             let socketInner = '';
             if (t === 'A') socketInner = '<div class="socket-hole hole-1"></div><div class="socket-hole hole-2"></div>';
             if (t === 'B') socketInner = '<div class="socket-hole hole-1"></div><div class="socket-hole hole-2"></div><div class="socket-hole ground"></div>';
@@ -383,86 +493,86 @@ class TravelApp {
             `;
         }).join('');
 
-        const reportHtml = `
-            <div class="report-content">
-                <div class="report-header">
-                    <div class="report-route">
-                        <span>${this.fromRegion.name}</span>
-                        <span class="route-arrow">✈️</span>
-                        <span>${this.toRegion.name}</span>
+    const reportHtml = `
+        <div class="report-content">
+            <div class="report-header">
+                <div class="report-route">
+                    <span>${this.fromRegion.name}</span>
+                    <span class="route-arrow">✈️</span>
+                    <span>${this.toRegion.name}</span>
+                </div>
+                <p>Intelligence Report for ${citizenship} Passport Holders</p>
+            </div>
+            
+            <div class="report-grid">
+                <div class="report-item">
+                    <h3>🛂 Visa Status</h3>
+                    <div class="status-badge">${visa.status}</div>
+                    <div class="data-meta">
+                        <span>Source: ${visa.source}</span>
+                        <span>Updated: ${visa.date}</span>
                     </div>
-                    <p>Intelligence Report for ${citizenship} Passport Holders</p>
                 </div>
                 
-                <div class="report-grid">
-                    <div class="report-item">
-                        <h3>🛂 Visa Status</h3>
-                        <div class="status-badge">${visa.status}</div>
-                        <div class="data-meta">
-                            <span>Source: ${visa.source}</span>
-                            <span>Updated: ${visa.date}</span>
-                        </div>
+                <div class="report-item">
+                    <h3>📶 Data Roaming (${provider})</h3>
+                    <div class="status-badge">${roaming.cost}</div>
+                    <p style="font-size: 0.75rem; margin-top: 0.5rem;">
+                        Plan: <strong>${plan}</strong><br>
+                        ${zoneInfo ? `Destination: <strong>${zoneInfo}</strong>` : ''}
+                    </p>
+                    <div class="data-meta">
+                        <span>Source: ${roaming.source}</span>
+                        <span>Updated: ${roaming.date}</span>
                     </div>
-                    
-                    <div class="report-item">
-                        <h3>📶 Data Roaming (${provider})</h3>
-                        <div class="status-badge">${roaming.cost}</div>
-                        <p style="font-size: 0.75rem; margin-top: 0.5rem;">
-                            Plan: <strong>${plan}</strong><br>
-                            ${zoneInfo ? `Destination: <strong>${zoneInfo}</strong>` : ''}
-                        </p>
-                        <div class="data-meta">
-                            <span>Source: ${roaming.source}</span>
-                            <span>Updated: ${roaming.date}</span>
-                        </div>
-                    </div>
-
-                    <div class="report-item">
-                        <h3>🔌 Destination Wall Sockets</h3>
-                        <div class="adapter-visual">
-                            ${adapterHtml}
-                        </div>
-                        <div class="data-meta">
-                            <span>Source: ${adapter.source}</span>
-                            <span>Updated: ${adapter.date}</span>
-                        </div>
-                    </div>
-
-                    ${driving ? `
-                    <div class="report-item">
-                        <h3>🚗 Driving Requirements</h3>
-                        <div class="status-badge" style="background-color: oklch(60% 0.15 30);">IDP Required</div>
-                        <p style="font-size: 0.8rem; margin-top: 0.5rem;">${driving.req} ${driving.note}</p>
-                        <div class="data-meta">
-                            <span>Source: ${driving.source}</span>
-                            <span>Updated: ${driving.date}</span>
-                        </div>
-                    </div>
-                    ` : `
-                    <div class="report-item">
-                        <h3>💡 Travel Tip</h3>
-                        <p style="font-size: 0.85rem; opacity: 0.8;">Always keep a digital copy of your ${citizenship} passport in a secure cloud storage.</p>
-                        <div class="data-meta">
-                            <span>Source: Vibe Intelligence</span>
-                            <span>Updated: May 2026</span>
-                        </div>
-                    </div>
-                    `}
                 </div>
 
-                <button id="restart-travel" class="btn-primary" style="margin-top: 2rem;">Explore Another Region</button>
+                <div class="report-item">
+                    <h3>🔌 Destination Wall Sockets</h3>
+                    <div class="adapter-visual">
+                        ${adapterHtml}
+                    </div>
+                    <div class="data-meta">
+                        <span>Source: ${adapter.source}</span>
+                        <span>Updated: ${adapter.date}</span>
+                    </div>
+                </div>
+
+                ${driving ? `
+                <div class="report-item">
+                    <h3>🚗 Driving Requirements</h3>
+                    <div class="status-badge" style="background-color: oklch(60% 0.15 30);">IDP Required</div>
+                    <p style="font-size: 0.8rem; margin-top: 0.5rem;">${driving.req} ${driving.note}</p>
+                    <div class="data-meta">
+                        <span>Source: ${driving.source}</span>
+                        <span>Updated: ${driving.date}</span>
+                    </div>
+                </div>
+                ` : `
+                <div class="report-item">
+                    <h3>💡 Travel Tip</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Always keep a digital copy of your ${citizenship} passport in a secure cloud storage.</p>
+                    <div class="data-meta">
+                        <span>Source: Vibe Intelligence</span>
+                        <span>Updated: May 2026</span>
+                    </div>
+                </div>
+                `}
             </div>
-        `;
 
-        const reportContainer = document.getElementById('travel-report');
-        reportContainer.innerHTML = reportHtml;
-        this.showSection('travel-report');
+            <button id="restart-travel" class="btn-primary" style="margin-top: 2rem;">Explore Another Region</button>
+        </div>
+    `;
 
-        document.getElementById('restart-travel').addEventListener('click', () => {
-            this.resetSelection();
-            this.showSection('map-selection');
-        });
-    }
+    const reportContainer = document.getElementById('travel-report');
+    reportContainer.innerHTML = reportHtml;
+    this.showSection('travel-report');
+
+    document.getElementById('restart-travel').addEventListener('click', () => {
+        this.resetSelection();
+        this.showSection('map-selection');
+    });
+}
 
     showSection(id) {
         ['map-selection', 'additional-info', 'travel-report'].forEach(sid => {
